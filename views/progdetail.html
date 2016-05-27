@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row row-content" ng-controller="progDetailController">
+        <div class="col-xs-12" ng-if="!showprograma">
+            <h3>{{message}}</h3>
+        </div>
+            
+        <div class="col-xs-12" ng-if="showprograma">
+            
+            <h2>{{programa.nombr}}</h2>
+            <br>
+            <h4>Objetivos del programa</h4>
+            <p>{{programa.objtv}}</p>
+            <br>
+            <h4>Indicadores</h4>
+                <div ng-if="!showindic">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped" ng-repeat="indicador in indicadores" ng-if="showindic">
+                        <tr>
+                            <td width="45%"><strong>Indicador</strong></td>
+                            <td width="15%"><strong>Línea base<br>
+                            {{indicador.ybas}}</strong></td>
+                            <td width="5%"><strong>2016</strong></td>
+                            <td width="5%"><strong>2017</strong></td>
+                            <td width="5%"><strong>2018</strong></td>
+                            <td width="5%"><strong>2019</strong></td>
+                            <td width="5%"><strong>2020</strong></td>
+                            <td width="15%"><strong>Responsable</strong></td>
+                        </tr>
+                        <tr>
+                        <td>{{indicador.nombre}}</td>
+                        <td>{{indicador.vbas}}</td>
+                        <td>{{indicador.v2016}}</td>
+                        <td>{{indicador.v2017}}</td>
+                        <td>{{indicador.v2018}}</td>
+                        <td>{{indicador.v2019}}</td>
+                        <td>{{indicador.v2020}}</td>
+                        <td>{{indicador.resp}}</td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="4">Variables:<br>
+                        {{indicador.inter}}
+                        </td>
+                        <td colspan="3">Fórmula:<br>
+                        {{indicador.form}}
+                        </td>
+                        <td>
+                        Unidad: <br>
+                        {{indicador.unid}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            Descripción:<br>
+                            {{indicador.des}}
+                        </td>
+                    </tr>                   
+                    </table>
+                </div>
+                
+            <br>
+            <h4>Explicación</h4>
+            <p>{{programa.explccn}}</p>
+            <br>
+            <h4>Acciones</h4>
+            <p>{{programa.accns}}</p>
+            
+
+        </div>
+        <!--
+        <div class="col-xs-12">
+        <ul class="media-list">
+                   <li ng-if="!showindic">
+                            <h3>{{message}}</h3>
+                    </li>
+                    <li class="media" ng-repeat="indicador in indicadores" ng-if="showindic">
+                        <div class="media-body">
+                        
+                            <h3 class="media-heading">{{indicador.nombre}}</h3>
+                            <p>{{indicador.inter}}</p>
+                        </div>
+                    </li>
+        </ul>
+        </div>
+        -->
+    </div>
+</div>    
