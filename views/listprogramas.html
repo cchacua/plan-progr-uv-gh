@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Listado de programas</h1>
+    <br>
+    <p>A continuación encontrará un listado de los programas nuevos programas que se encuentran en la propuesta de la nueva resolución para el Plan Programático de la Universidad del Valle 2016 - 2020. Para acceder a la ficha de un programa en particular, por favor de clic sobre el nombre del programa deseado.</p>
+    <br>
+    <div class="row ">
+        <div class="col-xs-12">
+            <ul class="media-list">
+                       <li ng-if="!showprogramas">
+                                <h3>{{message}}</h3>
+                        </li>
+                        <li class="media" ng-repeat="program in programas" ng-if="showprogramas">
+                            <div class="media-body">
+                                <a ui-sref="app.progdetails({id: program.cod})">
+                                    <h3 class="media-heading">{{program.coddos}}. {{program.nombr}}</h3>
+                                </a>
+                            </div>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div>
