@@ -1,3 +1,4 @@
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -80,4 +81,8 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+p {
+  text-align: justify;
 }

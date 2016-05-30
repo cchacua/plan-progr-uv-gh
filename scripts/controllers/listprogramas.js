@@ -8,7 +8,7 @@
  * Controller of the planprogApp
  */
 angular.module('planprogApp')
-  .controller('progDetailController', ['$scope', '$stateParams',  'dbprogramas', 'db', function($scope, $stateParams, dbprogramas, db) {
+  .controller('listprogramas', ['$scope', '$stateParams',  'dbprogramas', function($scope, $stateParams, dbprogramas) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -21,19 +21,8 @@ angular.module('planprogApp')
     dbprogramas.getprogramas().get()
     .$promise.then(
                 function(response) {
-                    $scope.programas = response.programas;
+                    $scope.programas = response.programas.slice(2, response.programas.length);
                     $scope.showprogramas = true;
-                },
-                function(response) {
-                    $scope.message = "Error: "+response.status + " " + response.statusText;
-    });
-      
-    $scope.showindic = false;
-    db.getindicadores().get()
-    .$promise.then(
-                function(response) {
-                    $scope.indicadores = response.indicadores;
-                    $scope.showindic = true;
                 },
                 function(response) {
                     $scope.message = "Error: "+response.status + " " + response.statusText;

@@ -1,23 +1,16 @@
 <div class="container">
 <div class="jumbotron">
-  <h1>Plan Programático 2016-2020</h1>
+  <h1>Plan Programático de la Universidad del Valle 2016-2020</h1>
 </div>
 
-<div class="row">
-    <div class="col-xs-12">
-        <ul class="media-list">
-                   <li ng-if="!showprogramas">
-                            <h3>{{message}}</h3>
-                    </li>
-                    <li class="media" ng-repeat="program in programas" ng-if="showprogramas">
-                        <div class="media-body">
-                            <a ui-sref="app.progdetails({id: program.cod})">
-                                <h3 class="media-heading">{{program.nombr}}</h3>
-                            </a>
-                            <p>{{program.explccn}}</p>
-                        </div>
-                    </li>
-        </ul>
+<div class="row row-content">
+    <div class="col-xs-6">
+      <a class="btn btn-block btn-danger" ui-sref="app.listprogramas">Listado y fichas de programas</a> 
+    <br>
     </div>
+    <div class="col-xs-6">
+      <a class="btn btn-block btn-success" ui-sref="app.visualizaciones">Visualizaciones</a> 
+    </div>
+    
 </div>
 </div>

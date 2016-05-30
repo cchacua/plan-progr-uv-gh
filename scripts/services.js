@@ -1,26 +1,32 @@
 'use strict';
 
 angular.module('planprogApp')
-        //http://gsx2json.com/api?id=SPREADSHEET_ID&sheet=SHEET_NUMBER&q=QUERY
-        .constant("baseURL","http://gsx2json.com/api?id=1y8sOqCW-Fcd7pQlHeZYge-wKoC40W7pHZ1PqJjRDCoU")
+        //https://script.google.com/macros/s/AKfycbyfC9f5VjPtYnA33HKIsu8JlERAo_A_IQZRBSOirLKHwmvQ9SY/exec?id=SPREADSHEETKEYID&sheet=SHEETNAME
+        //1y8sOqCW-Fcd7pQlHeZYge-wKoC40W7pHZ1PqJjRDCoU
+        .constant("baseURL","https://script.google.com/macros/s/AKfycbyfC9f5VjPtYnA33HKIsu8JlERAo_A_IQZRBSOirLKHwmvQ9SY/exec?id=1y8sOqCW-Fcd7pQlHeZYge-wKoC40W7pHZ1PqJjRDCoU")
         .service('dbprogramas', ['$resource', 'baseURL', function($resource,baseURL) {
     
     
                 this.getprogramas = function(){
-                    
-                    return $resource(baseURL+"&sheet=2"+"&q=:id",null,  {'update':{method:'GET' }});
-                    
+                    return $resource(baseURL+"&sheet=programas",null);
                 };
                         
         }])
 
-        .service('dbindicadores', ['$resource', 'baseURL', function($resource,baseURL) {
+        .service('db', ['$resource', 'baseURL', function($resource,baseURL) {
     
 
                 this.getindicadores = function(){
                     
-                    return $resource(baseURL+"&sheet=1"+"&q=:id",null,  {'update':{method:'GET' }});
-                    
+                    return $resource(baseURL+"&sheet=indicadores",null);
+                };
+                
+                this.getejes = function(){
+                    return $resource(baseURL+"&sheet=ejes",null);
+                };
+            
+                this.getestrategias = function(){
+                    return $resource(baseURL+"&sheet=estrategias",null);
                 };
                         
         }])

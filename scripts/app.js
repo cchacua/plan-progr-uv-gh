@@ -34,7 +34,7 @@ angular
 
     })
     
-    // route for the dishdetail page
+    // route for the program details
             .state('app.progdetails', {
                 url: 'prog/:id',
                 views: {
@@ -44,6 +44,49 @@ angular
                    }
                 }
             })
+    // route for listado de programas
+    .state('app.listprogramas', {
+                url:'prog',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/listprogramas.html',
+                        controller  : 'listprogramas'                  
+                    }
+                }
+    })
+    
+    // route for visualizaciones
+    .state('app.visualizaciones', {
+                url:'vis',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/visualizaciones.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+    // route for visualizaciones / resolución
+    .state('app.visualizaciones.res', {
+                url:'/reso',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/reso.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+    // Indicadores por programa
+    .state('app.visualizaciones.indi-pro', {
+                url:'/indi-pro',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/indi-pro.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
     
     // route for the aboutus page
     .state('app.aboutus', {
