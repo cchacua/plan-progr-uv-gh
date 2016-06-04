@@ -8,17 +8,40 @@
  * Controller of the planprogApp
  */
 angular.module('planprogApp')
-  .controller('visualizaciones', ['$scope', '$stateParams',  'dbprogramas', 'db', function($scope, $stateParams, dbprogramas, db) {
+  .controller('visualizaciones', ['$scope', '$stateParams', 'db', function($scope, $stateParams, db) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-
+      
+    $scope.showejes = false;
+    db.getejes().get()
+    .$promise.then(
+                function(response) {
+                    $scope.ejes = response.ejes.slice(2, response.ejes.length);
+                    $scope.showejes = true;
+                },
+                function(response) {
+                    $scope.message = "Error: "+response.status + " " + response.statusText;
+    });
+      
+      
+    $scope.showestrategias = false;
+    db.getestrategias().get()
+    .$promise.then(
+                function(response) {
+                    $scope.estrategias = response.estrategias.slice(2, response.estrategias.length);
+                    $scope.showestrategias = true;
+                },
+                function(response) {
+                    $scope.message = "Error: "+response.status + " " + response.statusText;
+    });
+      
     $scope.idprograma = $stateParams.id
     $scope.showprogramas = false;
     $scope.message = "Cargando ...";
-    dbprogramas.getprogramas().get()
+    db.getprogramas().get()
     .$promise.then(
                 function(response) {
                     $scope.programas = response.programas.slice(2, response.programas.length);
@@ -39,28 +62,28 @@ angular.module('planprogApp')
                     $scope.message = "Error: "+response.status + " " + response.statusText;
     });
 
-    $scope.showejes = false;
-    db.getejes().get()
+    $scope.showlineamientos = false;
+    db.getlineamientos().get()
     .$promise.then(
                 function(response) {
-                    $scope.ejes = response.ejes.slice(2, response.ejes.length);
-                    $scope.showejes = true;
-                },
-                function(response) {
-                    $scope.message = "Error: "+response.status + " " + response.statusText;
-    });
-      
-    $scope.showestrategias = false;
-    db.getestrategias().get()
-    .$promise.then(
-                function(response) {
-                    $scope.estrategias = response.estrategias.slice(2, response.estrategias.length);
-                    $scope.showestrategias = true;
+                    $scope.lineamientos = response.lineamientos.slice(2, response.lineamientos.length);
+                    $scope.showlineamientos = true;
                 },
                 function(response) {
                     $scope.message = "Error: "+response.status + " " + response.statusText;
     });
     
+    $scope.showresponsables = false;
+    db.getresponsables().get()
+    .$promise.then(
+                function(response) {
+                    $scope.responsables = response.responsables.slice(2, response.responsables.length);
+                    $scope.showresponsables = true;
+                },
+                function(response) {
+                    $scope.message = "Error: "+response.status + " " + response.statusText;
+    });
+      
     $scope.fecha = new Date().toISOString();
       
 }]);

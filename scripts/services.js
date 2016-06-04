@@ -16,18 +16,38 @@ angular.module('planprogApp')
         .service('db', ['$resource', 'baseURL', function($resource,baseURL) {
     
 
-                this.getindicadores = function(){
+            this.getindicadores = function(){
                     
-                    return $resource(baseURL+"&sheet=indicadores",null);
-                };
+                return $resource(baseURL+"&sheet=indicadores",null);
+            };
                 
-                this.getejes = function(){
-                    return $resource(baseURL+"&sheet=ejes",null);
-                };
+            this.getejes = function(){
+                return $resource(baseURL+"&sheet=ejes",null);
+            };
             
-                this.getestrategias = function(){
-                    return $resource(baseURL+"&sheet=estrategias",null);
-                };
+            this.getestrategias = function(){
+                return $resource(baseURL+"&sheet=estrategias",null);
+            };
+                
+            this.getprogramas = function(){
+                return $resource(baseURL+"&sheet=programas",null);
+            };
+            
+            this.getindicadores = function(){
+                    return $resource(baseURL+"&sheet=indicadores",null);
+            };
+            
+            this.getlineamientos = function(){
+                return $resource(baseURL+"&sheet=lineamientos",null);
+            };
+            
+            this.getorientaciones = function(){
+                return $resource(baseURL+"&sheet=orientaciones",null);
+            };
+            
+            this.getresponsables = function(){
+                return $resource(baseURL+"&sheet=responsables",null);
+            };
                         
         }])
 

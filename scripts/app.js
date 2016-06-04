@@ -16,7 +16,7 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     
-    // route for the home page
+    // Ruta para la página de inicio
     .state('app', {
                 url:'/',
                 views: {
@@ -34,7 +34,7 @@ angular
 
     })
     
-    // route for the program details
+    // Ruta para la página de detalles del programa
             .state('app.progdetails', {
                 url: 'prog/:id',
                 views: {
@@ -54,8 +54,10 @@ angular
                     }
                 }
     })
+
+/*****************************INICIO VISUALIZACIONES***************************/
     
-    // route for visualizaciones
+    // Ruta para la página de visualizaciones
     .state('app.visualizaciones', {
                 url:'vis',
                 views: {
@@ -77,7 +79,7 @@ angular
                 }
     })
     
-    // Indicadores por programa
+    // Ruta para la página Indicadores por programa
     .state('app.visualizaciones.indi-pro', {
                 url:'/indi-pro',
                 views: {
@@ -88,7 +90,53 @@ angular
                 }
     })
     
-    // route for the aboutus page
+    // Ruta para la página Indicadores por programa, con valores de los indicadores
+    .state('app.visualizaciones.indi-pro-values', {
+                url:'/indi-pro-values',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/indi-pro-values.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+    // Ruta para la página programas y responsables
+    .state('app.visualizaciones.pro-resp', {
+                url:'/pro-resp',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/pro-resp.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+    // Ruta para la página Eje, estrategia, programa, indicador
+    .state('app.visualizaciones.eje-est-prog-ind', {
+                url:'/eje-est-prog-ind',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/eje-est-prog-ind.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+   // Ruta para la página Eje, estrategia, programa, lineamiento, orientación
+    .state('app.visualizaciones.eje-est-prog-lin-orie', {
+                url:'/eje-est-prog-lin-orie',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/eje-est-prog-lin-orie.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+/*****************************FIN VISUALIZACIONES***************************/
+
+    // Ruta para la página de Acerca de
     .state('app.aboutus', {
                 url:'aboutus',
                 views: {
@@ -98,21 +146,7 @@ angular
                     }
                 }
     });
-    /**
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-      **/
+
     $urlRouterProvider.otherwise('/');
     
   });
