@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12 text-right">
+            <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
+        </div>
+        <div class="col-xs-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th width="5%">Eje</th>
+                        <th width="26.5%">Estrategia</th>
+                        <th width="29%">Programa</th>
+                        <th>Lineamientos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="eje in ejes" ng-if="showejes">
+                        <td>
+                            <strong>{{eje.codejeedos}}. {{eje.nombr}}</strong>
+                        </td>
+                        <td colspan="3">
+                            <table class="table table-bordered table-condensed">
+                                <tr ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
+                                    <td width="30%">{{estrategia.codestdos}}. {{estrategia.nombr}}</td>
+                                    <td>
+                                        <table class="table table-bordered table-condensed">
+                                            <tr ng-repeat="programa in programas | filter: estrategia.codest" ng-if="programas">
+                                                <td width="50%">{{programa.coddos}}. {{programa.nombr}}</td>
+                                                <td>
+                                                    <table class="table table-bordered table-condensed" ng-repeat="lineamiento in lineamientos | filter: programa.codlin" ng-if="showlineamientos">
+                                                        <tr>
+                                                            <td width="8%">
+                                                              <small style="white-space: pre-line">{{lineamiento.codlinedos}}. 
+                                                                </small>
+                                                            </td>
+                                                            <td><small style="white-space: pre-line">{{lineamiento.nombr}}
+                                                                <!--{{lineamiento.nombr.split(",")}}{{$last ? '' : ', '}}-->
+                                                                </small></td>
+                                                        </tr>
+                                                        <!--
+                                                        <tr>
+                                                            <td><small></small></td>
+                                                        </tr>
+                                                        -->
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
