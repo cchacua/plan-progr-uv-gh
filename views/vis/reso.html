@@ -36,15 +36,15 @@
                         <table class="table table-bordered table-striped" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                             <thead>
                             <tr>
-                                    <td width="42%"><strong>Indicador</strong></td>
-                                    <td width="18%"><strong>Línea base<br>
+                                    <td width="45%"><strong>Indicador</strong></td>
+                                    <td width="7%"><strong>Línea base<br>
                                     {{indicador.ybas}}</strong></td>
                                     <td width="5%"><strong>2016</strong></td>
                                     <td width="5%"><strong>2017</strong></td>
                                     <td width="5%"><strong>2018</strong></td>
                                     <td width="5%"><strong>2019</strong></td>
                                     <td width="5%"><strong>2020</strong></td>
-                                    <td width="15%"><strong>Responsable</strong></td>
+                                    <td width="23%"><strong>Responsable</strong></td>
                             </tr>
 
                             </thead>
@@ -83,7 +83,6 @@
                             </table>
                     </div>
                     <br>
-                    <h5>Explicación</h5>
                     <p style="white-space: pre-line">{{programa.explccn}}</p>
                     <br>
                     <h5>Principales acciones</h5>
