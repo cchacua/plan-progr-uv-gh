@@ -42,7 +42,6 @@
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
-                    <div class="table-responsive">
                         <table class="table table-bordered table-striped table-condensed" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                             <tr>
                                 <td colspan="7"><strong>{{indicador.codeindi}}. Indicador: {{indicador.nombre}}</strong></td>
@@ -89,7 +88,6 @@
                             
                             </tbody>
                             </table>
-                    </div>
                     <br>
                 </div>
             </div>
