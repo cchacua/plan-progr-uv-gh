@@ -4,7 +4,7 @@
             <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
         </div>
         <div class="col-xs-12">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped table-condensed">
                 <thead>
                     <tr>
                         <th>Programa</th>
@@ -21,7 +21,7 @@
                         
                         </td>
                         <td>
-                            <table class="table table-bordered" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                            <table class="table table-bordered table-condensed" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                 <tr>
                                     <td width="40%">{{indicador.nombre}}</td>
                                     <td width="10%"><strong>{{indicador.ybas}}</strong><br><br>{{indicador.vbas}}</td>
