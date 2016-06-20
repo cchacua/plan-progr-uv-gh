@@ -10,13 +10,11 @@
             <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
             <br>
             <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
-            <h3>Estrategias y programas</h3>
-            
+            <br>
             <div ng-if="!showestrategias">
                 <h4>{{message}}</h4>
             </div>
             <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
-                <br>
                 <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
                 <div ng-if="!showprogramas">
                     <h5>{{message}}</h5>
@@ -26,14 +24,20 @@
                     <br>
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
                     <br>
-                    <h5>a) Propósito del programa</h5>
-                    <p>{{programa.objtv}}</p>
-                    <br>
-                    <h5>b) Explicación del programa</h5>
-                    <p style="white-space: pre-line">{{programa.explccn}}</p>
-                    <br>
-                    <h5>c) Principales acciones</h5>
-                    <p style="white-space: pre-line">{{programa.accns}}</p>
+                    <ol type="a">
+                        <li>
+                            <h5>Propósito del programa</h5>
+                            <p>{{programa.objtv}}</p>
+                        </li>
+                        <li>
+                            <h5>Explicación del programa</h5>
+                            <p style="white-space: pre-line">{{programa.explccn}}</p>
+                        </li>
+                        <li>
+                            <h5>Principales acciones</h5>
+                            <p style="white-space: pre-line">{{programa.accns}}</p>
+                        </li>
+                    </ol>
                     <br>
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
@@ -46,7 +50,7 @@
                             <tbody>
                             <tr>
                                 <td colspan="7">
-                                    <strong>Descripción:</strong>
+                                    <strong>Descripción del indicador:</strong>
                                     <p>{{indicador.des}}</p>
                                 </td>
                             </tr>
