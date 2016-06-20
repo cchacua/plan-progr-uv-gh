@@ -8,9 +8,7 @@
         </div>
         <div class="col-xs-12" ng-repeat="eje in ejes" ng-if="showejes">
             <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
-            <br>
             <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
-            <br>
             <div ng-if="!showestrategias">
                 <h4>{{message}}</h4>
             </div>
@@ -21,9 +19,7 @@
                 </div>  
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                     <!--| filter: eje.codest-->
-                    <br>
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
-                    <br>
                     <ol type="a">
                         <li>
                             <h5>Propósito del programa</h5>
@@ -38,7 +34,6 @@
                             <p style="white-space: pre-line">{{programa.accns}}</p>
                         </li>
                     </ol>
-                    <br>
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
