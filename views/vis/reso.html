@@ -26,15 +26,18 @@
                     <br>
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
                     <br>
+                    <h6>a) Propósito del programa</h6>
                     <p>{{programa.objtv}}</p>
                     <br>
-                    <h5>Indicadores</h5>
+                    <h6>b) Descripción del programa</h6>
+                    <p style="white-space: pre-line">{{programa.explccn}}</p>
+                    <h6>c) Indicadores</h6>
+                    <br>
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-condensed" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
-                            <thead>
                             <tr>
                                     <td width="45%"><strong>Indicador</strong></td>
                                     <td width="7%"><strong>Línea base<br>
@@ -46,8 +49,6 @@
                                     <td width="5%"><strong>2020</strong></td>
                                     <td width="23%"><strong>Responsable</strong></td>
                             </tr>
-
-                            </thead>
                             <tbody>
                             <tr>
                                 <td>{{indicador.nombre}}</td>
@@ -83,9 +84,7 @@
                             </table>
                     </div>
                     <br>
-                    <p style="white-space: pre-line">{{programa.explccn}}</p>
-                    <br>
-                    <h5>Principales acciones</h5>
+                    <h6>d) Principales acciones</h6>
                     <p style="white-space: pre-line">{{programa.accns}}</p>
                 </div>
             </div>
