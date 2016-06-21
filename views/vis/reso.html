@@ -1,3 +1,12 @@
+<style>
+td
+{border-left:1px solid black;
+border-top:1px solid black;}
+table
+{border-right:1px solid black;
+border-bottom:1px solid black;}
+</style>
+
 <div class="container">
     <div class="row row-content">
         <div class="col-xs-12 text-right">
@@ -37,7 +46,10 @@
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
-                        <table class="table table-bordered table-striped table-condensed" style="border: 1px solid #000;" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                        <table style="border: 1px solid #000;" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                            <!--
+                            class="table table-bordered table-striped table-condensed" 
+                            -->
                             <tr>
                                 <td colspan="7"><strong>{{indicador.codeindi}}. Indicador: {{indicador.nombre}}</strong></td>
                             </tr>
