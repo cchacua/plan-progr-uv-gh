@@ -46,7 +46,7 @@ border-bottom:1px solid black;}
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
-                        <table style="border: 1px solid #000;" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                        <table ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                             <!--
                             class="table table-bordered table-striped table-condensed" 
                             -->
