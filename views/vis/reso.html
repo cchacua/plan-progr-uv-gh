@@ -1,7 +1,9 @@
 <style>
 td
 {border-left:1px solid black;
-border-top:1px solid black;}
+border-top:1px solid black;
+        padding: 5px;
+}
 table
 {border-right:1px solid black;
 border-bottom:1px solid black;}
@@ -36,11 +38,11 @@ border-bottom:1px solid black;}
                         </li>
                         <li>
                             <h5>Explicación del programa</h5>
-                            <p style="white-space: pre-line">{{programa.explccn}}</p>
+                            <p style="white-space: pre-line;">{{programa.explccn}}</p>
                         </li>
                         <li>
                             <h5>Principales acciones</h5>
-                            <p style="white-space: pre-line">{{programa.accns}}</p>
+                            <p style="white-space: pre-line;">{{programa.accns}}</p>
                         </li>
                     </ol>
                     <div ng-if="!showindic">
@@ -80,7 +82,7 @@ border-bottom:1px solid black;}
                             </tr>
                             <tr>
 
-                                <td colspan="4" style="white-space: pre-line"><strong>Variables:</strong>
+                                <td colspan="4" style="white-space: pre-line;"><strong>Variables:</strong>
                                 {{indicador.inter}}
                                 </td>
                                 <td colspan="2"><strong>Fórmula:</strong><br>
