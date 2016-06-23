@@ -22,17 +22,25 @@ border-bottom:1px solid #DDDDDD}
             <!--
             <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
             -->
+            <br>
             <div ng-if="!showestrategias">
                 <h4>{{message}}</h4>
             </div>
             <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
                 <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
+                <br>
                 <div ng-if="!showprogramas">
                     <h5>{{message}}</h5>
                 </div>  
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
-                      <p>{{programa.objtv}}</p>
+                        <br>
+                        <p>Responsable: {{programa.urespon}}
+                                <br>{{programa.dirrespon}}
+                        </p>
+                        <br>
+                        <p>Propósito: {{programa.objtv}}</p>
+                        <br>
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
@@ -41,20 +49,21 @@ border-bottom:1px solid #DDDDDD}
                             class="table table-bordered table-striped table-condensed" 
                             -->
                             <tr>
-                                    <td width="14%"><strong>Línea base</strong></td>
-                                    <td width="11%"><strong>2016</strong></td>
-                                    <td width="11%"><strong>2017</strong></td>
-                                    <td width="11%"><strong>2018</strong></td>
-                                    <td width="11%"><strong>2019</strong></td>
-                                    <td width="11%"><strong>2020</strong></td>
+                                    <td width="40%"><strong>Indicadores</strong></td>
+                                    <td width="10%"><strong>Línea base</strong></td>
+                                    <td width="10%"><strong>2016</strong></td>
+                                    <td width="10%"><strong>2017</strong></td>
+                                    <td width="10%"><strong>2018</strong></td>
+                                    <td width="10%"><strong>2019</strong></td>
+                                    <td width="10%"><strong>2020</strong></td>
                             </tr>
                             <tbody>
                             <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                 <td>
-                                  <strong>{{indicador.codeindi}}. Indicador: {{indicador.nombre}}
+                                  <strong>{{indicador.codeindi}}. {{indicador.nombre}}</strong>
                                   <br>
                                   Año base: {{indicador.ybas}}
-                                  </strong>
+                                  
                                 </td>
                                 <td>{{indicador.vbas}}</td>
                                 <td>{{indicador.v2016}}</td>
