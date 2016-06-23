@@ -70,16 +70,16 @@ border-bottom:1px solid #5D5D5D}
                 <table class="table table-bordered table-striped table-condensed" ng-repeat="eje in ejes" ng-if="showejes">
                         <tr>
                                 <td>
-                                        <h3>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h3>
+                                       <strong>{{eje.codejeedos}}. Eje: {{eje.nombr}}</strong>
                                 </td>
                         </tr>
                         <tr ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">>
                                 <td>
-                                        <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
+                                        <strong class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</strong>
                                         <table class="table table-bordered table-striped table-condensed" ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                                                 <tr>
                                                         <td colspan="7">
-                                                        <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
+                                                        <strong>{{programa.coddos}}. {{programa.nombr}}</strong>
                                                         <p><strong>Responsable: </strong>{{programa.urespon}} {{programa.dirrespon}}</p>
                                                         <p><strong>Propósito: </strong>{{programa.objtv}}</p>
                                                         </td>
