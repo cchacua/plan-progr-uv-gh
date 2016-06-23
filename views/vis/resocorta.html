@@ -12,6 +12,7 @@ border-bottom:1px solid #5D5D5D}
 </style>
 
 <div class="container">
+        <!--        
     <div class="row row-content">
         <div class="col-xs-12 text-right">
             <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
@@ -22,9 +23,6 @@ border-bottom:1px solid #5D5D5D}
         </div>
         <div class="col-xs-12" ng-repeat="eje in ejes" ng-if="showejes">
             <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
-            <!--
-            <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
-            -->
             <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
                 <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
@@ -34,9 +32,6 @@ border-bottom:1px solid #5D5D5D}
                         <p><strong>Propósito: </strong>{{programa.objtv}}</p>
                         <br>
                         <table class="table table-bordered table-striped table-condensed">
-                            <!--
-                            class="table table-bordered table-striped table-condensed" 
-                            -->
                             <tr>
                                     <td width="47%"><small><strong>Indicadores</strong></small></td>
                                     <td width="13%"><small><strong>Línea base</strong></small></td>
@@ -69,6 +64,7 @@ border-bottom:1px solid #5D5D5D}
             </div>
         </div>
     </div>
+    -->
     <div class="row row-content">
             <div class="col-xs-12">
                 <table class="table table-bordered table-striped table-condensed" ng-repeat="eje in ejes" ng-if="showejes">
