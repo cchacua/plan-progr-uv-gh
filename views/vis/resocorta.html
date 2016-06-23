@@ -14,6 +14,7 @@ border-bottom:1px solid #DDDDDD}
         <div class="col-xs-12 text-right">
             <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
         </div>
+        
         <div class="col-xs-12" ng-if="!showejes">
             <h2>{{message}}</h2>
         </div>
@@ -22,27 +23,13 @@ border-bottom:1px solid #DDDDDD}
             <!--
             <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
             -->
-            <br>
-            <div ng-if="!showestrategias">
-                <h4>{{message}}</h4>
-            </div>
             <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
                 <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
-                <br>
-                <div ng-if="!showprogramas">
-                    <h5>{{message}}</h5>
-                </div>  
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
                         <br>
-                        <p>Responsable: {{programa.urespon}} {{programa.dirrespon}}
-                        </p>
-                        <br>
-                        <p class="text-justify">Propósito: {{programa.objtv}}</p>
-                        <br>
-                    <div ng-if="!showindic">
-                        <h5>{{message}}</h5>
-                    </div>
+                        <p><strong>Responsable: </strong>{{programa.urespon}} {{programa.dirrespon}}</p>
+                        <p><strong>Propósito: </strong>{{programa.objtv}}</p>
                         <table class="table table-bordered table-striped table-condensed">
                             <!--
                             class="table table-bordered table-striped table-condensed" 
