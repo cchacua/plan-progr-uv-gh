@@ -22,13 +22,11 @@ border-bottom:1px solid #5D5D5D}
         </div>
         <div class="col-xs-12" ng-repeat="eje in ejes" ng-if="showejes">
             <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
-            <br>
             <!--
             <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
             -->
             <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
                 <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
-                <br>
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
                     <br>
@@ -51,11 +49,11 @@ border-bottom:1px solid #5D5D5D}
                             <tbody>
                             <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                 <td>
-                                  <small>{{indicador.codeindi}}. {{indicador.nombre}}
-                                  &nbsp;
+                                  <p><small>{{indicador.codeindi}}. {{indicador.nombre}}
+                                  <br>
                                   <small>Año base: {{indicador.ybas}}</small>
                                   </small>
-                                  
+                                  </p>
                                 </td>
                                 <td><small>{{indicador.vbas}}</small></td>
                                 <td><small>{{indicador.v2016}}</small></td>
@@ -66,6 +64,7 @@ border-bottom:1px solid #5D5D5D}
                             </tr>
                             </tbody>
                             </table>
+                            <br>
                 </div>
             </div>
         </div>
