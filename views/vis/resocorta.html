@@ -40,29 +40,29 @@ border-bottom:1px solid #5D5D5D}
                             class="table table-bordered table-striped table-condensed" 
                             -->
                             <tr>
-                                    <td width="52%"><strong>Indicadores</strong></td>
-                                    <td width="8%"><strong>Línea base</strong></td>
-                                    <td width="8%"><strong>2016</strong></td>
-                                    <td width="8%"><strong>2017</strong></td>
-                                    <td width="8%"><strong>2018</strong></td>
-                                    <td width="8%"><strong>2019</strong></td>
-                                    <td width="8%"><strong>2020</strong></td>
+                                    <td width="52%"><small><strong>Indicadores</strong></small></td>
+                                    <td width="8%"><small><strong>Línea base</strong></small></td>
+                                    <td width="8%"><small><strong>2016</strong></small></td>
+                                    <td width="8%"><small><strong>2017</strong></small></td>
+                                    <td width="8%"><small><strong>2018</strong></small></td>
+                                    <td width="8%"><small><strong>2019</strong></small></td>
+                                    <td width="8%"><small><strong>2020</strong></small></td>
                             </tr>
                             <tbody>
                             <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                 <td>
                                   <small>{{indicador.codeindi}}. {{indicador.nombre}}
-                                  <br>
+                                  &nbsp;
                                   <small>Año base: {{indicador.ybas}}</small>
                                   </small>
                                   
                                 </td>
-                                <td>{{indicador.vbas}}</td>
-                                <td>{{indicador.v2016}}</td>
-                                <td>{{indicador.v2017}}</td>
-                                <td>{{indicador.v2018}}</td>
-                                <td>{{indicador.v2019}}</td>
-                                <td>{{indicador.v2020}}</td>
+                                <td><small>{{indicador.vbas}}</small></td>
+                                <td><small>{{indicador.v2016}}</small></td>
+                                <td><small>{{indicador.v2017}}</small></td>
+                                <td><small>{{indicador.v2018}}</small></td>
+                                <td><small>{{indicador.v2019}}</small></td>
+                                <td><small>{{indicador.v2020}}</small></td>
                             </tr>
                             </tbody>
                             </table>
