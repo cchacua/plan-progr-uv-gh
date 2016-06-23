@@ -35,8 +35,7 @@ border-bottom:1px solid #DDDDDD}
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
                         <br>
-                        <p>Responsable: {{programa.urespon}}
-                                <br>{{programa.dirrespon}}
+                        <p>Responsable: {{programa.urespon}} {{programa.dirrespon}}
                         </p>
                         <br>
                         <p>Propósito: {{programa.objtv}}</p>
@@ -49,20 +48,20 @@ border-bottom:1px solid #DDDDDD}
                             class="table table-bordered table-striped table-condensed" 
                             -->
                             <tr>
-                                    <td width="40%"><strong>Indicadores</strong></td>
-                                    <td width="10%"><strong>Línea base</strong></td>
-                                    <td width="10%"><strong>2016</strong></td>
-                                    <td width="10%"><strong>2017</strong></td>
-                                    <td width="10%"><strong>2018</strong></td>
-                                    <td width="10%"><strong>2019</strong></td>
-                                    <td width="10%"><strong>2020</strong></td>
+                                    <td width="52%"><strong>Indicadores</strong></td>
+                                    <td width="8%"><strong>Línea base</strong></td>
+                                    <td width="8%"><strong>2016</strong></td>
+                                    <td width="8%"><strong>2017</strong></td>
+                                    <td width="8%"><strong>2018</strong></td>
+                                    <td width="8%"><strong>2019</strong></td>
+                                    <td width="8%"><strong>2020</strong></td>
                             </tr>
                             <tbody>
                             <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                 <td>
-                                  <strong>{{indicador.codeindi}}. {{indicador.nombre}}</strong>
+                                  {{indicador.codeindi}}. {{indicador.nombre}}
                                   <br>
-                                  Año base: {{indicador.ybas}}
+                                  <small>Año base: {{indicador.ybas}}</small>
                                   
                                 </td>
                                 <td>{{indicador.vbas}}</td>
