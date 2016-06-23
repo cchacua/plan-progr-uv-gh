@@ -1,14 +1,14 @@
 <style>
 td
-{border-left:1px solid #DDDDDD;
-border-top:1px solid #DDDDDD;
+{border-left:1px solid #5D5D5D;
+border-top:1px solid #5D5D5D;
         padding: 5px;
 }
-/**
+
 table
-{border-right:1px solid #DDDDDD;
-border-bottom:1px solid #DDDDDD}
-**/
+{border-right:1px solid #5D5D5D;
+border-bottom:1px solid #5D5D5D}
+
 </style>
 
 <div class="container">
@@ -22,15 +22,19 @@ border-bottom:1px solid #DDDDDD}
         </div>
         <div class="col-xs-12" ng-repeat="eje in ejes" ng-if="showejes">
             <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
+            <br>
             <!--
             <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
             -->
             <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
                 <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
+                <br>
                 <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
                     <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
+                    <br>
                         <p><strong>Responsable: </strong>{{programa.urespon}} {{programa.dirrespon}}</p>
                         <p><strong>Propósito: </strong>{{programa.objtv}}</p>
+                        <br>
                         <table class="table table-bordered table-striped table-condensed">
                             <!--
                             class="table table-bordered table-striped table-condensed" 
@@ -47,9 +51,10 @@ border-bottom:1px solid #DDDDDD}
                             <tbody>
                             <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                 <td>
-                                  {{indicador.codeindi}}. {{indicador.nombre}}
+                                  <small>{{indicador.codeindi}}. {{indicador.nombre}}
                                   <br>
                                   <small>Año base: {{indicador.ybas}}</small>
+                                  </small>
                                   
                                 </td>
                                 <td>{{indicador.vbas}}</td>
