@@ -9,13 +9,13 @@
                     <tr>
                         <th width="20%">Programa</th>
                         <th width="20%">Propósito</th>
-                        <th>Indicadores</th>
+                        <th width="60%">Indicadores</th>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td>
-                            <table>
+                            <table class="table table-bordered table-striped table-condensed">
                                 <tr>
                                     <td width="40%">Nombre</td>
                                     <td width="10%"><strong>Valor base</strong></td>
@@ -43,8 +43,8 @@
                         <td>
                             {{programa.objtv}}
                         </td>
-                        <!--td>
-                            <table>
+                        <td>
+                            <table class="table table-bordered table-striped table-condensed">
                                 <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                     <td width="40%">
                                         {{indicador.nombre}}
@@ -58,9 +58,8 @@
                                     <td width="10%">{{indicador.v2019}}</td>
                                     <td width="10%">{{indicador.v2020}}</td>
                                 </tr>
-                                
                             </table>
-                        </td-->
+                        </td>
                     </tr>
                 </tbody>
             </table> 
