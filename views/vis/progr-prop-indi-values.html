@@ -32,13 +32,18 @@
                             {{programa.coddos}}. {{programa.nombr}}
                             <br>
                             <br>
-                            <p class="text-left">Responsable:
-                            {{programa.urespon}} {{programa.dirrespon}}
-                            </p>
+                            <small>
+                                <p class="text-left">Responsable:
+                                {{programa.urespon}} {{programa.dirrespon}}
+                                </p>
+                            </small>
+                            
                         
                         </td>
                         <td>
-                            {{programa.objtv}}
+                            <small>
+                                {{programa.objtv}}
+                            </small>
                         </td>
                         <td>
                             <table class="table table-bordered table-condensed">
@@ -46,9 +51,12 @@
                                     <td width="40%">
                                         {{indicador.nombre}}
                                         <br>
+                                        <small>
                                         Año base: {{indicador.ybas}}
                                         <br>
-                                        {{indicador.aparece}}
+                                        <strong>{{indicador.aparece}}</strong>  
+                                        </small>
+                                        
                                     </td>
                                     <td width="10%">{{indicador.vbas}}</td>
                                     <td width="10%">{{indicador.v2016}}</td>
