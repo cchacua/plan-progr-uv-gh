@@ -112,6 +112,16 @@ angular
                 }
     })
     
+        // Ruta para la página Programas, objetivos e indicador con valore
+    .state('app.visualizaciones.progr-prop-indi-values', {
+                url:'/progr-prop-indi-values',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/progr-prop-indi-values.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
     // Ruta para la página programas y responsables
     .state('app.visualizaciones.pro-resp', {
                 url:'/pro-resp',
