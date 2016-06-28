@@ -9,13 +9,10 @@
                     <tr>
                         <th width="20%">Programa</th>
                         <th width="20%">Propósito</th>
-                        <th width="60%">Indicadores</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <table class="table table-bordered table-striped table-condensed">
+                        <th width="60%">
+                            Indicadores
+                            <br>
+                            <table class="table table-bordered table-condensed">
                                 <tr>
                                     <td width="40%">Nombre</td>
                                     <td width="10%"><strong>Valor base</strong></td>
@@ -26,7 +23,7 @@
                                     <td width="10%"><strong>2020</strong></td>
                                 </tr>
                             </table>
-                        </td>    
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,12 +41,14 @@
                             {{programa.objtv}}
                         </td>
                         <td>
-                            <table class="table table-bordered table-striped table-condensed">
+                            <table class="table table-bordered table-condensed">
                                 <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                                     <td width="40%">
                                         {{indicador.nombre}}
                                         <br>
                                         Año base: {{indicador.ybas}}
+                                        <br>
+                                        {{indicador.aparece}}
                                     </td>
                                     <td width="10%">{{indicador.vbas}}</td>
                                     <td width="10%">{{indicador.v2016}}</td>
