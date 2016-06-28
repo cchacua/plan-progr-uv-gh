@@ -79,6 +79,17 @@ angular
                 }
     })
     
+    // route for visualizaciones / resolución corta
+    .state('app.visualizaciones.rescorta', {
+                url:'/resolucioncorta',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/resocorta.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
     // Ruta para la página Indicadores por programa
     .state('app.visualizaciones.indi-pro', {
                 url:'/indi-pro',

@@ -1,0 +1,119 @@
+<style>
+td
+{border-left:1px solid #5D5D5D;
+border-top:1px solid #5D5D5D;
+        padding: 5px;
+}
+
+table
+{border-right:1px solid #5D5D5D;
+border-bottom:1px solid #5D5D5D}
+
+</style>
+
+<div class="container">
+        <!--        
+    <div class="row row-content">
+        <div class="col-xs-12 text-right">
+            <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
+        </div>
+        
+        <div class="col-xs-12" ng-if="!showejes">
+            <h2>{{message}}</h2>
+        </div>
+        <div class="col-xs-12" ng-repeat="eje in ejes" ng-if="showejes">
+            <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
+            <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
+                <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
+                <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
+                    <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
+                    <br>
+                        <p><strong>Responsable: </strong>{{programa.urespon}} {{programa.dirrespon}}</p>
+                        <p><strong>Propósito: </strong>{{programa.objtv}}</p>
+                        <br>
+                        <table class="table table-bordered table-striped table-condensed">
+                            <tr>
+                                    <td width="47%"><small><strong>Indicadores</strong></small></td>
+                                    <td width="13%"><small><strong>Línea base</strong></small></td>
+                                    <td width="8%"><small><strong>2016</strong></small></td>
+                                    <td width="8%"><small><strong>2017</strong></small></td>
+                                    <td width="8%"><small><strong>2018</strong></small></td>
+                                    <td width="8%"><small><strong>2019</strong></small></td>
+                                    <td width="8%"><small><strong>2020</strong></small></td>
+                            </tr>
+                            <tbody>
+                            <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                                <td>
+                                  <p><small>{{indicador.codeindi}}. {{indicador.nombre}}
+                                  <br>
+                                  <small>Año base: {{indicador.ybas}}</small>
+                                  </small>
+                                  </p>
+                                </td>
+                                <td><small>{{indicador.vbas}}</small></td>
+                                <td><small>{{indicador.v2016}}</small></td>
+                                <td><small>{{indicador.v2017}}</small></td>
+                                <td><small>{{indicador.v2018}}</small></td>
+                                <td><small>{{indicador.v2019}}</small></td>
+                                <td><small>{{indicador.v2020}}</small></td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <div class="row row-content">
+            <div class="col-xs-12">
+                <table class="table table-bordered table-striped table-condensed" ng-repeat="eje in ejes" ng-if="showejes">
+                        <tr>
+                                <td>
+                                       <strong>{{eje.codejeedos}}. Eje: {{eje.nombr}}</strong>
+                                </td>
+                        </tr>
+                        <tr ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">>
+                                <td>
+                                        <strong class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</strong>
+                                        <table class="table table-bordered table-striped table-condensed" ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
+                                                <tr>
+                                                        <td colspan="7">
+                                                        <strong>{{programa.coddos}}. {{programa.nombr}}</strong>
+                                                        <p><strong>Responsable: </strong>{{programa.urespon}} {{programa.dirrespon}}</p>
+                                                        <p><strong>Propósito: </strong>{{programa.objtv}}</p>
+                                                        </td>
+                                                </tr> 
+                                                <tr>
+                                                    <td width="55%"><small><strong>Indicadores</strong></small></td>
+                                                    <td width="10%"><small><strong>Línea base</strong></small></td>
+                                                    <td width="7%"><small><strong>2016</strong></small></td>
+                                                    <td width="7%"><small><strong>2017</strong></small></td>
+                                                    <td width="7%"><small><strong>2018</strong></small></td>
+                                                    <td width="7%"><small><strong>2019</strong></small></td>
+                                                    <td width="7%"><small><strong>2020</strong></small></td>
+                                                </tr>
+                                                <tr ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                                                        <td>
+                                                          <p><small>{{indicador.codeindi}}. {{indicador.nombre}}
+                                                          <br>
+                                                          <small>Año base: {{indicador.ybas}}</small>
+                                                          </small>
+                                                          </p>
+                                                        </td>
+                                                        <td><small>{{indicador.vbas}}</small></td>
+                                                        <td><small>{{indicador.v2016}}</small></td>
+                                                        <td><small>{{indicador.v2017}}</small></td>
+                                                        <td><small>{{indicador.v2018}}</small></td>
+                                                        <td><small>{{indicador.v2019}}</small></td>
+                                                        <td><small>{{indicador.v2020}}</small></td>
+                                                </tr>
+                                        </table>
+                                </td>
+                        </tr>
+                </table>
+            </div>
+    </div>
+</div>
+
+
