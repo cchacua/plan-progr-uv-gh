@@ -155,6 +155,17 @@ angular
                 }
     })
     
+       // Ruta para la página Eje, estrategia, programa, lineamiento, orientación
+    .state('app.visualizaciones.anexo-tecnico', {
+                url:'/anexo-tecnico',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/anexo-tecnico.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
 /*****************************FIN VISUALIZACIONES***************************/
 
     // Ruta para la página de Acerca de
