@@ -49,7 +49,7 @@ border-bottom:1px solid #767676}
                     <div ng-if="!showindic">
                         <h5>{{message}}</h5>
                     </div>
-                        <table ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                        <table width="100%" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
                             <!--
                             class="table table-bordered table-striped table-condensed" 
                             -->
@@ -72,10 +72,10 @@ border-bottom:1px solid #767676}
 
                             <tr>
 
-                                <td style="white-space: pre-line;" width="50%"><strong>Variables:</strong>
+                                <td style="white-space: pre-line;" width="70%"><strong>Variables:</strong>
                                 {{indicador.inter}}
                                 </td>
-                                <td width="25%"><strong>Fórmula:</strong><br>
+                                <td width="20%"><strong>Fórmula:</strong><br>
                                 {{indicador.form}}
                                 </td>
                                 <td>
