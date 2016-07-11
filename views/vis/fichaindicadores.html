@@ -7,17 +7,19 @@
      <div class="row row-content" ng-repeat="programa in programas" ng-if="showprogramas">
         <div class="col-xs-12" >
           <h2>{{programa.coddos}}. {{programa.nombr}}</h2>
-          <table class="table table-bordered table-striped" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+          <table class="table table-bordered table-hover table-condensed table-responsive" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
             <thead>
               <tr class="success">
-                <td>
-                  {{indicador.nombre}}
+                <td colspan="2">
+                    <h3>
+                       {{indicador.nombre}} 
+                    </h3>
                 </td>
               </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td class="success">
                         <strong>
                             Descripción del indicador:
                         </strong>
@@ -27,6 +29,19 @@
                             {{indicador.des}} 
                          </p>
                     </td>
+                </tr>
+                <tr>
+                    <td class="success">
+                        <strong>
+                            Responsable:
+                        </strong>
+                    </td>
+                    <td>
+                         <p>
+                            {{indicador.resp}}
+                         </p>
+                    </td>
+                    
                 </tr>
             </tbody>
           </table>
