@@ -166,6 +166,17 @@ angular
                 }
     })
     
+  // Ruta para la ficha de indicadores
+    .state('app.visualizaciones.fichaindicadores', {
+                url:'/fichaindicadores',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/fichaindicadores.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
 /*****************************FIN VISUALIZACIONES***************************/
 
     // Ruta para la página de Acerca de
