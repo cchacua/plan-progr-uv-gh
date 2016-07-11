@@ -10,20 +10,28 @@
           <table class="table table-bordered table-hover table-condensed table-responsive" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
             <thead>
               <tr class="active">
-                <td colspan="2">
-                    <h3>
+                <th colspan="2">
                        {{indicador.nombre}} 
-                    </h3>
-                </td>
+                </th>
               </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="active" width="10%">
-                        <strong>
-                            Descripción del indicador:
-                        </strong>
+                    <th class="active" width="10%">
+                            Responsable
+                    </th>
+                    <td>
+                         <p>
+                            <span class="glyphicon glyphicon-eye-open"></span>: {{indicador.resp}}
+                            <span class="glyphicon glyphicon-user"></span>: {{indicador.resppersona}}
+                            <span class="glyphicon glyphicon-envelope"></span>: {{indicador.respemail}}
+                         </p>
                     </td>
+                </tr>
+                <tr>
+                    <th class="active" >
+                            Descripción del indicador
+                    </th>
                     <td>
                          <p>
                             {{indicador.des}} 
@@ -31,18 +39,27 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="active">
-                        <strong>
-                            Responsable:
-                        </strong>
-                    </td>
+                    <th class="active" >
+                        Fórmula
+                    </th>
                     <td>
                          <p>
-                            {{indicador.resp}}
+                            {{indicador.form}} 
                          </p>
                     </td>
-                    
                 </tr>
+                
+                <tr>
+                    <th class="active" >
+                        Variables
+                    </th>
+                    <td>
+                         <p>
+                            {{indicador.inter}} 
+                         </p>
+                    </td>
+                </tr>
+                
             </tbody>
           </table>
             
