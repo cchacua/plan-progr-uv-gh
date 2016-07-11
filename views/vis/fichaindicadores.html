@@ -10,7 +10,7 @@
           <table class="table table-bordered table-hover table-condensed table-responsive" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
             <thead>
               <tr class="active">
-                <th colspan="2">
+                <th colspan="4">
                        {{indicador.nombre}} 
                 </th>
               </tr>
@@ -20,7 +20,7 @@
                     <th class="active" width="10%">
                             Responsable
                     </th>
-                    <td>
+                    <td colspan="3">
                          <p>
                             <span class="glyphicon glyphicon-eye-open"></span> {{indicador.resp}}<br>
                             <span class="glyphicon glyphicon-user"></span> {{indicador.resppersona}}<br>
@@ -32,8 +32,8 @@
                     <th class="active" >
                             Descripción del indicador
                     </th>
-                    <td>
-                         <p>
+                    <td colspan="3">
+                         <p style="white-space: pre-line">
                             {{indicador.des}} 
                          </p>
                     </td>
@@ -47,14 +47,22 @@
                             {{indicador.form}} 
                          </p>
                     </td>
+                    <th class="active" >
+                        Unidad de medida
+                    </th>
+                    <td>
+                         <p>
+                            {{indicador.unid}} 
+                         </p>
+                    </td>
                 </tr>
                 
                 <tr>
                     <th class="active" >
                         Variables
                     </th>
-                    <td>
-                         <p>
+                    <td colspan="3">
+                         <p style="white-space: pre-line">
                             {{indicador.inter}} 
                          </p>
                     </td>
