@@ -3,19 +3,39 @@
         <div class="col-xs-12 text-right">
             <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
         </div>
-        <div class="col-xs-12" ng-repeat="programa in programas" ng-if="showprogramas">
+     </div> 
+     <div class="row row-content" ng-repeat="programa in programas" ng-if="showprogramas">
+        <div class="col-xs-12" >
           <h2>{{programa.coddos}}. {{programa.nombr}}</h2>
-          <table ng-repeat="indicador in indicadores | filter: {codeprog:{programa.cod}}" ng-if="showindic">
+          <table class="table table-bordered table-striped" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
             <thead>
-              <tr>
+              <tr class="success">
                 <td>
                   {{indicador.nombre}}
                 </td>
               </tr>
-            </thead>  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            Descripción del indicador:
+                        </strong>
+                    </td>
+                    <td>
+                         <p>
+                            {{indicador.des}} 
+                         </p>
+                    </td>
+                </tr>
+            </tbody>
           </table>
             
         </div>
+
+    </div>
+</div>
+
         <!--
         <div class="col-xs-12" ng-if="!showejes">
             <h2>{{message}}</h2>
@@ -105,8 +125,5 @@
             </div>
         </div>
         -->
-    </div>
-</div>
-
 
 
