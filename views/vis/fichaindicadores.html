@@ -9,7 +9,7 @@
           <h2>{{programa.coddos}}. {{programa.nombr}}</h2>
           <table class="table table-bordered table-hover table-condensed table-responsive" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
             <thead>
-              <tr class="success">
+              <tr class="active">
                 <td colspan="2">
                     <h3>
                        {{indicador.nombre}} 
@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="success">
+                    <td class="active" width="10%">
                         <strong>
                             Descripción del indicador:
                         </strong>
@@ -31,7 +31,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="success">
+                    <td class="active">
                         <strong>
                             Responsable:
                         </strong>
