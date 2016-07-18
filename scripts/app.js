@@ -177,6 +177,17 @@ angular
                 }
     })
     
+      // Ruta para la página cinco mesas de trabajo
+    .state('app.visualizaciones.mesastrabajo', {
+                url:'/mesastrabajo',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/mesastrabajo.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
 /*****************************FIN VISUALIZACIONES***************************/
 
     // Ruta para la página de Acerca de
