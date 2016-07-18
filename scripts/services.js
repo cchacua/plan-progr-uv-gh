@@ -48,6 +48,10 @@ angular.module('planprogApp')
             this.getresponsables = function(){
                 return $resource(baseURL+"&sheet=responsables",null);
             };
+            
+        this.getmesas = function(){
+                return $resource(baseURL+"&sheet=mesas",null);
+            };
                         
         }])
 
