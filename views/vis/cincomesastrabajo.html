@@ -10,7 +10,7 @@
                     <td >
                         <strong>{{mesa.nombr}}</strong>
                         <ul >
-                            <li ng-repeat="programa in programas | orderBy: 'coddos'">{{programa.coddos}}. {{programa.nombr}}</li>
+                            <li ng-repeat="programa in programas | filter: mesa.codmesa">{{programa.coddos}}. {{programa.nombr}}</li>
                         </ul>
                     </td>
                     </tr>
