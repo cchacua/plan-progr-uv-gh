@@ -5,50 +5,14 @@
         </div>
         <div class="col-xs-12">
             <table class="table table-bordered table-striped">
-
-                <thead>
-                    <tr>
-                        <th>Programa</th>
-                        <th>Unidad responsable</th>
-                        <th>Dirección responsable</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr ng-repeat="mesa in mesas | orderBy: 'mesanum'" >
-                    <td>
+                    <td >
                         <strong>{{mesa.nombr}}</strong>
+                        <ul >
+                            <li ng-repeat="programa in programas | orderBy: 'coddos'">{{programa.coddos}}. {{programa.nombr}}</li>
+                        </ul>
                     </td>
-                    <td>
-                        
-                    </td>
-                    </tr>
-                    <tr ng-repeat="programa in programas | orderBy: 'urespon'" ng-if="showprogramas">
-                        <td width="60%">{{programa.coddos}}. {{programa.nombr}}</td>
-                        <td>
-                            {{programa.urespon}} 
-                        </td>
-                        <td>
-                            {{programa.dirrespon}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table> 
-            <br>
-            <h1>Convenciones</h1>
-            <br>
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Acrónimo</th>
-                        <th>Responsable</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="responsable in responsables | orderBy: 'acrnm'" ng-if="showresponsables">
-                        <td width="20%">{{responsable.acrnm}}</td>
-                        <td>
-                            {{responsable.nombr}} 
-                        </td>
                     </tr>
                 </tbody>
             </table> 
