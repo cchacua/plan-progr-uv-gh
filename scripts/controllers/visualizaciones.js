@@ -83,6 +83,17 @@ angular.module('planprogApp')
                 function(response) {
                     $scope.message = "Error: "+response.status + " " + response.statusText;
     });
+    
+  $scope.showmesas = false;
+    db.getmesas().get()
+    .$promise.then(
+                function(response) {
+                    $scope.mesas = response.mesas.slice(2, response.mesas.length);
+                    $scope.showmesas = true;
+                },
+                function(response) {
+                    $scope.message = "Error: "+response.status + " " + response.statusText;
+    });
       
     $scope.fecha = new Date().toISOString();
       
