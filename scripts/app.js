@@ -182,7 +182,7 @@ angular
                 url:'/mesastrabajo',
                 views: {
                     'content@': {
-                        templateUrl : 'views/vis/mesastrabajo.html',
+                        templateUrl : 'views/vis/cincomesastrabajo.html',
                         controller  : 'visualizaciones'                  
                     }
                 }
