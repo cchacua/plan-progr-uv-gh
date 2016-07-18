@@ -5,14 +5,7 @@
         </div>
         <div class="col-xs-12">
             <table class="table table-bordered table-striped">
-                <tr>
-                    <td>
-                        <strong>{{mesas.nombr}}</strong>
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr>
+
                 <thead>
                     <tr>
                         <th>Programa</th>
@@ -21,6 +14,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr ng-repeat="mesa in mesas | orderBy: 'mesanum'" >
+                    <td>
+                        <strong>{{mesa.nombr}}</strong>
+                    </td>
+                    <td>
+                        
+                    </td>
+                    </tr>
                     <tr ng-repeat="programa in programas | orderBy: 'urespon'" ng-if="showprogramas">
                         <td width="60%">{{programa.coddos}}. {{programa.nombr}}</td>
                         <td>
