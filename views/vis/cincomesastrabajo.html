@@ -8,7 +8,7 @@
                 <tbody>
                     <tr ng-repeat="mesa in mesas | orderBy: 'mesanum'" >
                     <td >
-                        <strong>{{mesa.nombr}}</strong>
+                        <strong>{{mesa.mesanum}}. {{mesa.nombr}}</strong>
                         <ul >
                             <li ng-repeat="programa in programas | filter: mesa.codmesa">{{programa.coddos}}. {{programa.nombr}}</li>
                         </ul>
