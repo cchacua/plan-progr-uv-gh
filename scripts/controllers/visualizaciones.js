@@ -8,7 +8,7 @@
  * Controller of the planprogApp
  */
 angular.module('planprogApp')
-  .controller('visualizaciones', ['$scope', '$stateParams', 'db', function($scope, $stateParams, db) {
+  .controller('visualizaciones', ['$scope', '$stateParams', 'db','Excel','$timeout', function($scope, $stateParams, db, Excel, $timeout) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -96,5 +96,10 @@ angular.module('planprogApp')
     });
       
     $scope.fecha = new Date().toISOString();
+    
+    $scope.exportToExcel=function(tableId){ // ex: '#my-table'
+            var exportHref=Excel.tableToExcel(tableId,'sheet name');
+            $timeout(function(){location.href=exportHref;},100); // trigger download
+    }
       
 }]);
