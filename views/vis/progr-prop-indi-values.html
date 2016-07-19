@@ -1,10 +1,13 @@
 <div class="container">
     <div class="row row-content">
         <div class="col-xs-12 text-right">
+            <button class="btn btn-link" ng-click="exportToExcel('#table')">
+                <span class="glyphicon glyphicon-share"></span> Exportar a Excel
+            </button>
             <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
         </div>
         <div class="col-xs-12">
-            <table class="table table-bordered table-striped table-condensed">
+            <table class="table table-bordered table-striped table-condensed" id="table">
                 <thead>
                     <tr>
                         <th width="20%" style="vertical-align:middle; text-align:center; ">Programa</th>
