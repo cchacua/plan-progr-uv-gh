@@ -96,10 +96,13 @@ angular.module('planprogApp')
     });
       
     $scope.fecha = new Date().toISOString();
-    
-    $scope.exportToExcel=function(tableId){ // ex: '#my-table'
-            var exportHref=Excel.tableToExcel(tableId,'sheet name');
-            $timeout(function(){location.href=exportHref;},100); // trigger download
+
+    $scope.exportToExcel=function(tableId){
+        var exportHref=Excel.tableToExcel(tableId,'report');
+        var a = document.createElement('a');
+        a.href = exportHref;
+        a.download = 'Plan UV.xls';
+        a.click();
     }
       
 }]);
