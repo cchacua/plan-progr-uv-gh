@@ -1,0 +1,94 @@
+<style>
+td
+{border-left:1px solid #767676;
+border-top:1px solid #767676;
+        padding: 5px;
+}
+table
+{border-right:1px solid #767676;
+border-bottom:1px solid #767676}
+</style>
+
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12 text-right">
+            <strong>Versión: {{fecha | date : 'dd/MM/yyyy HH:mm'}}</strong>
+        </div>
+        <div class="col-xs-12" ng-if="!showejes">
+            <h2>{{message}}</h2>
+        </div>
+        <div class="col-xs-12" ng-repeat="eje in ejes" ng-if="showejes">
+            <h2>{{eje.codejeedos}}. Eje: {{eje.nombr}}</h2>
+            <p><strong>Objetivo: </strong> {{eje.objtv}}</p>
+            <div ng-if="!showestrategias">
+                <h4>{{message}}</h4>
+            </div>
+            <div ng-repeat="estrategia in estrategias | filter: eje.codeje" ng-if="showestrategias">
+                <h4 class="text-justify">{{estrategia.codestdos}}. Estrategia: {{estrategia.nombr}}</h4>
+                <div ng-if="!showprogramas">
+                    <h5>{{message}}</h5>
+                </div>  
+                <div ng-repeat="programa in programas | filter: estrategia.codest" ng-if="showprogramas">
+                    <!--| filter: eje.codest-->
+                    <h5>{{programa.coddos}}. {{programa.nombr}}</h5>
+                    <ol type="a">
+                        <!--li>
+                            <h5>Propósito del programa</h5>
+                            <p>{{programa.objtv}}</p>
+                        </li-->
+                        <li>
+                            <h5>Explicación del programa</h5>
+                            <p style="white-space: pre-line;">{{programa.explccn}}</p>
+                        </li>
+                        
+                        <li>
+                            <h5>Principales acciones</h5>
+                        </li>
+                        <p style="white-space: pre;">{{programa.accns}}</p>
+                    </ol>
+                    <div ng-if="!showindic">
+                        <h5>{{message}}</h5>
+                    </div>
+                        <table width="100%" ng-repeat="indicador in indicadores | filter: programa.cod" ng-if="showindic">
+                            <!--
+                            class="table table-bordered table-striped table-condensed" 
+                            -->
+                            <tr>
+                                <td colspan="3">
+                                <strong>{{indicador.codeindi}}. Indicador: {{indicador.nombre}}</strong>
+                                </td>
+                            </tr>
+                            <tbody>
+                            <tr>
+                                <td colspan="3">
+                                  <p><strong>Responsable: </strong>{{indicador.resp}} </p>
+                                  <p><strong>Descripción del indicador: </strong>{{indicador.des}}</p>
+                                    
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="white-space: pre-line;" width="70%"><strong>Variables:</strong>
+                                {{indicador.inter}}
+                                </td>
+                                <td width="20%"><strong>Fórmula:</strong><br>
+                                {{indicador.form}}
+                                </td>
+                                <td>
+                                <strong>Unidad:</strong> <br>
+                                {{indicador.unid}}
+                                </td>
+
+                            </tr>
+                            
+                            </tbody>
+                            </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -112,6 +112,16 @@ angular
                 }
     })
     
+        // Ruta para la página Programas, objetivos e indicador con valore
+    .state('app.visualizaciones.progr-prop-indi-values', {
+                url:'/progr-prop-indi-values',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/progr-prop-indi-values.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
     // Ruta para la página programas y responsables
     .state('app.visualizaciones.pro-resp', {
                 url:'/pro-resp',
@@ -140,6 +150,39 @@ angular
                 views: {
                     'content@': {
                         templateUrl : 'views/vis/eje-est-prog-lin-orie.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+       // Ruta para la página Eje, estrategia, programa, lineamiento, orientación
+    .state('app.visualizaciones.anexo-tecnico', {
+                url:'/anexo-tecnico',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/anexo-tecnico.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+  // Ruta para la ficha de indicadores
+    .state('app.visualizaciones.fichaindicadores', {
+                url:'/fichaindicadores',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/fichaindicadores.html',
+                        controller  : 'visualizaciones'                  
+                    }
+                }
+    })
+    
+      // Ruta para la página cinco mesas de trabajo
+    .state('app.visualizaciones.mesastrabajo', {
+                url:'/mesastrabajo',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/vis/cincomesastrabajo.html',
                         controller  : 'visualizaciones'                  
                     }
                 }

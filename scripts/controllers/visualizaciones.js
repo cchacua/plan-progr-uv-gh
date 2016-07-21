@@ -8,7 +8,7 @@
  * Controller of the planprogApp
  */
 angular.module('planprogApp')
-  .controller('visualizaciones', ['$scope', '$stateParams', 'db', function($scope, $stateParams, db) {
+  .controller('visualizaciones', ['$scope', '$stateParams', 'db','Excel','$timeout', function($scope, $stateParams, db, Excel, $timeout) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -83,7 +83,26 @@ angular.module('planprogApp')
                 function(response) {
                     $scope.message = "Error: "+response.status + " " + response.statusText;
     });
+    
+  $scope.showmesas = false;
+    db.getmesas().get()
+    .$promise.then(
+                function(response) {
+                    $scope.mesas = response.mesas.slice(2, response.mesas.length);
+                    $scope.showmesas = true;
+                },
+                function(response) {
+                    $scope.message = "Error: "+response.status + " " + response.statusText;
+    });
       
     $scope.fecha = new Date().toISOString();
+
+    $scope.exportToExcel=function(tableId){
+        var exportHref=Excel.tableToExcel(tableId,'report');
+        var a = document.createElement('a');
+        a.href = exportHref;
+        a.download = 'Plan UV.xls';
+        a.click();
+    }
       
 }]);
